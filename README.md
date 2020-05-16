@@ -13,9 +13,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|text|null: false, match(/@.+/|
-|password|string|null: false,maxlength: "8"|
+|username|string|null: false|
+|email|string|unll: false|
+|password|string|null: false|
 
 ### Association
 - has_many :groups
@@ -25,19 +25,20 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|gropename|string|null: false|
+|groupename|string|null: false|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 - has_many :messages
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|groupes_users_id|integer|null: false|
-|created_at|date|
+|text|text|null: false|
+|grope_id|integer|null:false, foreign_key: true|
+|user_id|integer|null: false, forregn_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
