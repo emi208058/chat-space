@@ -4,29 +4,17 @@
       .side_bar__top--items--name
         = current_user.name
       .side_bar__top--items--icon
-        = link_to "#", class: "side_bar__top--items--icon__edit" do
+        = link_to new_group_path, class: "side_bar__top--items--icon__edit" do
           %i.far.fa-edit
         = link_to edit_user_path(current_user), class: "side_bar__top--items--icon__set" do
           %i.fas.fa-cog
   .side_bar__group
-    .side_bar__group--list
-      .side_bar__group--list__name
-        techcamp
-      .side_bar__group--list__message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .side_bar__group--list
+        = link_to '#' do
+          .side_bar__group--list__name
+            = group.name
+          .side_bar__group--list__message
+            まだメッセージはありません
     
-    .side_bar__group--list
-      .side_bar__group--list__name
-        techcamp
-      .side_bar__group--list__message
-        まだメッセージはありません
-    .side_bar__group--list
-      .side_bar__group--list__name
-        techcamp
-      .side_bar__group--list__message
-        まだメッセージはありません
-    .side_bar__group--list
-      .side_bar__group--list__name
-        techcamp
-      .side_bar__group--list__message
-        まだメッセージはありません
+    
