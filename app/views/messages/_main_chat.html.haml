@@ -2,46 +2,29 @@
   .main_chat__group-info
     .main_chat__group-info--left-contents
       .main_chat__group-info--left-contents__name
-        test
+        = @group.name
       .main_chat__group-info--left-contents__members
-        Member:masa
+        Member:
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
     .main_chat__group-info--right-contents
-      = link_to "Edit", "#", class: "edit_btn"
+      = link_to "Edit", edit_group_path(@group), class: "edit_btn"
       
 
-  .main_chat__messages-list
-    .main_chat__messages-list--message
-      .main_chat__messages-list--message__member
-        .main_chat__messages-list--message__member--name
-          masa
-        .main_chat__messages-list--message__member--timestamp
-          2019/11/20(wed) 17:43:01
-      .main_chat__messages-list--message__comment
-        おはよう
+  .messages
+    = render @messages
 
-      .main_chat__messages-list--message__member
-        .main_chat__messages-list--message__member--name
-          masa
-        .main_chat__messages-list--message__member--timestamp
-          2019/11/20(wed) 17:43:01
-      .main_chat__messages-list--message__comment
-        こんにちは
-    
-      .main_chat__messages-list--message__member
-        .main_chat__messages-list--message__member--name
-          masa
-        .main_chat__messages-list--message__member--timestamp
-          2019/11/20(wed) 17:43:01
-      .main_chat__messages-list--message__comment
-        おいしい
 
-  %form.main_chat__messages-form
-    %label.main_chat__messages-form--leftcontent
-      %input.main_chat__messages-form--leftcontent__textform{:name => "text", :placeholder => "type a message", :type => "textarea"}
-      %label.main_chat__messages-form--leftcontent__image
-        %input.image{:name => "inage", :type => "file"}
-        %i.far.fa-image
-    
-    %input.send_btn{:name => "text", :type => "submit", :value => "Send"}
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: 'leftcontent', placeholder: "type a message"
+      .rightcontent
+        = f.label :image, class: 'leftcontent__icon' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'send_btn'
+
+ 
+
 
 
