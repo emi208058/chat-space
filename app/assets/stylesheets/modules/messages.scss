@@ -108,28 +108,27 @@ $font_color: #fff;
       }
     }
   }
-    .message{
-      height: 74px;
-      padding-left: 40px;
-      padding-top: 35px;
-      .upper-message{
-        padding-bottom: 12px;
-        display: flex;
-        &__user-name{
-          color: #333333;
-          font-size: 16px;
-        }
-        &__date{
-          color: #999999;
-          font-size: 12px;
-          padding-left: 5px;
-        }
+  .message{
+    padding-left: 40px;
+    padding-top: 35px;
+    .upper-message{
+      padding-bottom: 12px;
+      display: flex;
+      &__user-name{
+        color: #333333;
+        font-size: 16px;
       }
-      .lower-message{
-        color: #434A54;
-        font-size: 14px;
+      &__date{
+        color: #999999;
+        font-size: 12px;
+        padding-left: 5px;
       }
     }
+    .lower-message{
+      color: #434A54;
+      font-size: 14px;
+    }
+  }
   
   form{
     background-color: #d2d2d2;
