@@ -53,9 +53,9 @@ $(function(){
   })
     .done(function(data){
       var html = buildHTML(data);
-      $('.main_chat').append(html);
+      $('.messages').append(html);
       $('form')[0].reset();
-      $('.main_chat').animate({ scrollTop: $('.main_chat')[0].scrollHeight});
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('.send_btn').prop('disabled', false);
     })
   })
