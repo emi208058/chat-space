@@ -45,6 +45,7 @@ $font_color: #fff;
     }
   }
   &__group{
+    overflow: scroll;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     &--list{
@@ -69,7 +70,8 @@ $font_color: #fff;
 
 
 .main_chat{
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
   background-color: $font_color;
   width: calc(100vw - 300px);
   height: 100vh;
@@ -108,28 +110,30 @@ $font_color: #fff;
       }
     }
   }
-  .message{
-    padding-left: 40px;
-    padding-top: 35px;
-    .upper-message{
-      padding-bottom: 12px;
-      display: flex;
-      &__user-name{
-        color: #333333;
-        font-size: 16px;
+  .messages{
+    overflow: scroll;
+    .message{
+      padding-left: 40px;
+      padding-top: 35px;
+      .upper-message{
+        padding-bottom: 12px;
+        display: flex;
+        &__user-name{
+          color: #333333;
+          font-size: 16px;
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+          padding-left: 5px;
+        }
       }
-      &__date{
-        color: #999999;
-        font-size: 12px;
-        padding-left: 5px;
+      .lower-message{
+        color: #434A54;
+        font-size: 14px;
       }
-    }
-    .lower-message{
-      color: #434A54;
-      font-size: 14px;
     }
   }
-  
   form{
     background-color: #d2d2d2;
     height: 90px;
