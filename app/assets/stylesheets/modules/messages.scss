@@ -154,16 +154,16 @@ $font_color: #fff;
           margin-left: 40px;
           width: calc(100vw - 195px);
           line-height: 50px;
-          box-shadow: 3px 3px 3px gray;
           width: 100%;
           padding: 10px;
+          border-style: none;
         }
           .rightcontent {
             position: relative;
             .leftcontent__icon{
               position: absolute;
               right: 10px;
-              font-size: 30px;
+              font-size: 20px;
               color: black;
               line-height: 50px;
               top: 20px;
@@ -174,20 +174,18 @@ $font_color: #fff;
 
           }
       
-          .send_btn{
-            font-weight: bold;
-            text-align: center;
-            cursor: pointer;
-            color: $font_color;
-            background-color: #38AEF0;
-            height: 50px;
-            width: 100px;
-            margin: 20px 40px 20px 15px;
-            text-align: center;
-            line-height: 50px;
-            box-shadow: 3px 3px 3px gray;
-            border-style: none;
-          }
+        .send_btn{
+          text-align: center;
+          cursor: pointer;
+          color: $font_color;
+          background-color: #38AEF0;
+          height: 50px;
+          width: 120px;
+          margin: 20px 40px 20px 15px;
+          text-align: center;
+          line-height: 50px;
+          
+        }
         
       }
 }
